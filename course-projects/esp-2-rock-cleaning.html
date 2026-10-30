@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ESP II · Beach Rock Cleaning · Diane Qin</title>
+<meta name="description" content="A client-based conceptual design project to remove latex paint from beach rocks without polluting Lake Huron, and what my teammates said about working with me.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Young+Serif&family=Instrument+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="../assets/css/site.css">
+</head>
+<body>
+<nav class="site-nav wrap" aria-label="Main">
+  <a href="../index.html">Home</a>
+  <a href="../design-teams/index.html">Design Teams</a>
+  <a href="index.html" aria-current="page">Course Projects</a>
+  <a href="../about.html">About</a>
+  <a href="../contact.html">Contact</a>
+</nav>
+
+<main class="wrap">
+  <nav class="crumbs mono" aria-label="Breadcrumb"><ol><li><a href="index.html">Course Projects</a></li><li aria-current="page">ESP II</li></ol></nav>
+
+  <header class="page-head">
+    <p class="eyebrow mono">Engineering Strategies &amp; Practice II · Jan – Apr 2026</p>
+    <h1>Cleaning paint off beach rocks</h1>
+    <p class="lede">Our client was scrubbing latex paint off painted rocks on a Lake Huron beach by hand. Our team of six designed a faster way to do it, without letting the paint end up in the lake.</p>
+  </header>
+
+  <dl class="facts">
+    <div><dt>My role</dt><dd>Research Coordinator. Wrote the idea generation and selection sections.</dd></div>
+    <div><dt>Team</dt><dd>Six first-year engineering students</dd></div>
+    <div><dt>Client</dt><dd>A U of T professor cleaning rocks in Port Elgin, Ontario</dd></div>
+    <div><dt>Outcome</dt><dd>A steel wool power drill attachment, with a prototype test plan</dd></div>
+  </dl>
+
+  <figure class="fig-wide">
+    <img src="../assets/img/esp/esp2-team.jpg" alt="Diane and her five ESP II teammates at the final showcase, one holding the power drill; teammates' faces are blurred." width="1475" height="1080">
+    <figcaption>Our team at the final showcase, with the star of the show: a power drill.</figcaption>
+  </figure>
+
+  <section class="chapter">
+    <div class="prose">
+      <h2>Problem Statement</h2>
+      <p>Painted rocks keep piling up on a beach in Port Elgin. As the paint wears off, it releases microplastics into Lake Huron. Our client was collecting the rocks and scrubbing them clean by hand, which is slow, tiring, and creates paint-filled rinse water.</p>
+      <p>So we started by measuring the problem. We timed how long it took to scrub a 3 × 3 cm square on the client's sample rock with steel wool (17.17 seconds), then scaled it up to the rock's full surface area.</p>
+    </div>
+    <div class="versus" role="group" aria-label="Cleaning time per rock">
+      <div><b>7.8 h</b><span>by hand (benchmark)</span></div>
+      <div class="vs">vs</div>
+      <div class="win"><b>~4.8 min</b><span>with our design (estimate)</span></div>
+    </div>
+  </section>
+
+  <section class="chapter">
+    <div class="prose">
+      <h2>Idea Generation and Selection</h2>
+      <p>We brainstormed individually first, then in structured group sessions, and used morphological charts and SCAMPER, two idea generation methods we learned in class. That gave us 60 full solutions, from abrasive and thermal to chemical and biological. Then we narrowed them down step by step:</p>
+    </div>
+    <ol class="funnel" style="--n:5">
+      <li><span class="n">60</span><span class="dots" style="--w:96%"></span><span class="step">ideas generated</span></li>
+      <li><span class="n">46</span><span class="dots" style="--w:76%"></span><span class="step">passed a feasibility check against our constraints</span></li>
+      <li><span class="n">10</span><span class="dots" style="--w:34%"></span><span class="step">survived team multivoting</span></li>
+      <li><span class="n">3</span><span class="dots" style="--w:14%"></span><span class="step">best on our top two objectives: paint removed and cleaning time</span></li>
+      <li><span class="n">1</span><span class="dots"></span><span class="step">highest Pugh chart score (+3)</span></li>
+    </ol>
+    <div class="prose">
+      <p>The final three were an ultrasonic cleaner, a poultice station, and a <b>steel wool power drill attachment</b>. The drill was chosen as our final design because it was the fastest, handled the biggest rocks, and produced the least hazardous waste.</p>
+    </div>
+  </section>
+
+  <section class="chapter">
+    <div class="prose">
+      <h2>Design Decisions</h2>
+      <p>One of the biggest things I learned in ESP II was how to quantify an objective. In conceptual design, you have to think ahead: once you have your ideas and early prototypes, how will you compare them against each other, and against the functions, objectives and constraints (FOCs) set by the client? So instead of comparing designs by feel, we gave every objective a number and a reason behind it, all documented in our design specification.</p>
+    </div>
+    <div class="decisions" style="grid-template-columns:1fr;max-width:var(--read)">
+      <article><h3>For example: defining "faster"</h3><p>We benchmarked the client's own method. Scrubbing by hand takes about 7.8 hours per rock, so that became the number every design had to beat.</p></article>
+    </div>
+    <div class="prose">
+      <p class="mono" style="color:var(--muted);margin:22px 0 6px">More objectives we turned into numbers</p>
+      <div class="table-wrap"><table class="settings">
+        <thead><tr><th scope="col">Vague goal</th><th scope="col">Measurable target</th><th scope="col">Why that number</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Clean well</th><td>&gt; 90% of paint removed</td><td>The minimum removal efficiency suggested by the Royal Society of Chemistry</td></tr>
+          <tr><th scope="row">Little waste</th><td>≤ 30 L of hazardous waste</td><td>More than 30 L needs multiple disposal containers in Port Elgin</td></tr>
+          <tr><th scope="row">Portable</th><td>&lt; 23 kg</td><td>A weight most adults can lift safely</td></tr>
+          <tr><th scope="row">Quiet</th><td>&lt; 50 dBA</td><td>Threatened bird species breed near the beach, and birds are the most noise-sensitive wildlife there</td></tr>
+        </tbody>
+      </table></div>
+    </div>
+  </section>
+
+  <section class="chapter">
+    <div class="prose">
+      <h2>My Role</h2>
+      <p>I was our team's <b>Research Coordinator</b>. This was a really fun role because I love organization. My tasks included:</p>
+      <ul class="did">
+        <li>Organizing the research behind our idea generation, so the team had a strong starting point</li>
+        <li>Writing the idea generation and selection sections of our Conceptual Design Specification</li>
+        <li>Keeping our references organized across two major reports</li>
+        <li>Writing an engaging opening hook for our presentation</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="chapter">
+    <div class="prose">
+      <h2>How I Work in a Team</h2>
+      <p>Twice during the term, teammates rated each other anonymously on six teamwork skills, on a scale from 1 to 5. Here's my feedback:</p>
+    </div>
+    <div class="pair tp fig-wide">
+      <figure><img src="../assets/img/esp/teamplayer-march.png" alt="Team PLAYER radar chart, March 2026. Peer ratings: Performance 4.6, Leadership 4.2, Attitude 4.6, Harmony 4.6, Expression 4.4, Reliable 4.6. Self ratings: 3 in every category." width="880" height="660" loading="lazy"><figcaption><b>March 2026</b></figcaption></figure>
+      <figure><img src="../assets/img/esp/teamplayer-april.png" alt="Team PLAYER radar chart, April 2026. Peer ratings: Performance 4.8, Leadership 4.0, Attitude 4.8, Harmony 4.8, Expression 4.6, Reliable 4.8. Self ratings: 4 in most categories, 3 for Harmony." width="880" height="660" loading="lazy"><figcaption><b>April 2026</b></figcaption></figure>
+    </div>
+    <p class="mono" style="color:var(--muted);margin-top:0">From my Team PLAYER peer feedback reports. Anonymous ratings out of 5; 4.5 and above counts as "Outstanding."</p>
+    <div class="prose">
+      <p>As my feedback shows, my teammates rated me "Outstanding" in five of six areas by April, up from four in March: performance, attitude, harmony, communication and reliability. I'm someone the team can count on to do high-quality work, on time, while keeping things running smoothly.</p>
+    </div>
+
+    <div class="quotes">
+      <blockquote><img class="fb" src="../assets/img/esp/fb-apr-reliable.png" alt="It's very impressive how reliable and organized you are in your work. Thank you for keeping the team in harmony with your warm personality and friendliness too!" loading="lazy"><cite>Teammate · April 2026</cite></blockquote>
+      <blockquote><img class="fb" src="../assets/img/esp/fb-mar-energy.png" alt="You're an incredible teammate to work with. The positive energy and openness you bring to the team discussions are very motivating to increase productivity." loading="lazy"><cite>Teammate · March 2026</cite></blockquote>
+      <blockquote class="wide"><img class="fb" src="../assets/img/esp/fb-apr-research.png" alt="Diane, it has been a pleasure working with you throughout the second semester. Your organization of the research for idea generation was incredibly valuable to the start of the CDS. I also appreciated how you took on writing the idea generation and selection sections of the document, as they were well done and completed in a timely manner which helped us in developing the CDS. Going into the FP, I look forward to your contributions to presentation content as they are always of high quality and have helped immensely in assignment completion." loading="lazy"><cite>Teammate · April 2026</cite></blockquote>
+      <blockquote class="wide"><img class="fb" src="../assets/img/esp/fb-apr-confidence.png" alt="You were incredibly understanding of my situation and made sure to speak to me, which helped me feel more confident and less unsure about being involved with speaking to the team, sharing my ideas, and streamlining work. This was wonderful and really helped me feel I should contribute more instead of being more reclusive/uncertain with regards to taking on tasks complicated by lack of belief in my own abilities. Thank you so much." loading="lazy"><cite>Teammate · April 2026</cite></blockquote>
+    </div>
+    <div class="prose">
+      <p>As these comments show, I care about the people side of teamwork as much as the work itself. I try to bring positive energy to our discussions and make sure everyone, especially quieter teammates, feels comfortable sharing their ideas.</p>
+    </div>
+  </section>
+
+  <section class="chapter">
+    <div class="prose">
+      <h2>Acting on Feedback</h2>
+      <p>Constructive criticism is how I become a better teammate and a more productive member of the team. Here's a comment I received earlier in the term, and what changed after it:</p>
+    </div>
+    <div class="growth">
+      <div><span class="mono">March</span><img class="fb" src="../assets/img/esp/fb-mar-references.png" alt="I have greatly enjoyed being your team member and the work you bring to the project is of high quality. During our project requirements your completion of the reference list took longer than expected. This caused the team to delay our submission. In the future, it would be great if you delivered your same quality of work slightly earlier so that the team can be better positioned to submit assignments by internal deadlines." loading="lazy"></div>
+      <div class="after"><span class="mono">April</span><img class="fb" src="../assets/img/esp/fb-apr-references.png" alt="You did an excellent job making sure our references are in order throughout the entire production timeline of our CDS and taking the initiative to complete tasks outside of ur scope. Keep up the good work!" loading="lazy"></div>
+    </div>
+    <div class="prose">
+      <p>I had underestimated how long organizing references would take, and the whole team waited on me. So for our next report, I changed how I planned the task:</p>
+      <ul class="did">
+        <li><b>Started two days earlier</b>, beginning with the sections whose sources weren't going to change</li>
+        <li><b>Told the team what I was working on</b>, and asked them not to move sources in those sections while I did</li>
+        <li><b>Agreed on a content freeze</b> with the team, a rough draft deadline of 8 PM, before compiling the rest</li>
+      </ul>
+      <p>Everyone met the draft deadline, nothing needed reordering at the last minute, and we submitted that same night. My reliability score went from 4.6 to 4.8, and the task that held us back in March became something my teammates thanked me for.</p>
+    </div>
+  </section>
+
+  <nav class="pager" aria-label="More course projects">
+    <a href="index.html"><span class="mono">← Back to</span><span>Course Projects</span></a>
+    <a class="next" href="esp-1-high-park.html"><span class="mono">Next →</span><span>ESP I: High Park</span></a>
+  </nav>
+</main>
+
+<footer class="site-foot"><div class="wrap mono"><span>© 2026 Diane Qin</span><a href="mailto:dianecqin@gmail.com">dianecqin@gmail.com</a></div></footer>
+</body>
+</html>
