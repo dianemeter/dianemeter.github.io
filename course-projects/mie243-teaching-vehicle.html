@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>MIE243 · Teaching Vehicle Chassis · Diane Qin</title>
+<meta name="description" content="Designing the chassis for a low-cost teaching vehicle in SolidWorks, checking how the subsystems fit together, and running a four-person team in Jira.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Young+Serif&family=Instrument+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="../assets/css/site.css">
+</head>
+<body>
+<nav class="site-nav wrap" aria-label="Main">
+  <a href="../index.html">Home</a>
+  <a href="../design-teams/index.html">Design Teams</a>
+  <a href="index.html" aria-current="page">Course Projects</a>
+  <a href="../about.html">About</a>
+  <a href="../contact.html">Contact</a>
+</nav>
+
+<main class="wrap">
+  <nav class="crumbs mono" aria-label="Breadcrumb"><ol><li><a href="index.html">Course Projects</a></li><li aria-current="page">MIE243 Design Project</li></ol></nav>
+
+  <header class="page-head">
+    <p class="eyebrow mono">Mechanical Engineering Design I · Design Project · Nov 2026</p>
+    <h1>The chassis that holds a teaching car together</h1>
+    <p class="lede">Our team is designing a low-cost vehicle that students can take apart to learn about steering and gear ratios. My teammates designed the gearbox and the steering box. I designed the frame that holds them both, and I ran our project in Jira.</p>
+  </header>
+
+  <dl class="facts">
+    <div><dt>My role</dt><dd>Chassis design and CAD. Scrum master: planning, Jira, and keeping our parts compatible.</dd></div>
+    <div><dt>Team</dt><dd>Four second-year engineering students: gearbox (Chenyu), steering (Marvin, Ethan), chassis (me)</dd></div>
+    <div><dt>Tools</dt><dd>SolidWorks parts, assemblies and global variables · Jira (Scrum)</dd></div>
+    <div><dt>Outcome</dt><dd>A rolling chassis with my teammate's steering box mated on, and a design flaw caught before anything was built</dd></div>
+  </dl>
+
+  <figure class="fig-hero">
+    <img src="../assets/img/mie243/vehicle/assembly-iso.jpg" alt="SolidWorks assembly: a rectangular aluminium ladder frame on four wheels. A clear plate on the front holds a see-through steering box, with a long steering column and steering wheel reaching back over the frame." width="720" height="610">
+    <figcaption>My chassis with four wheels and Marvin's steering box mated on top.</figcaption>
+  </figure>
+
+  <section class="chapter">
+    <div class="prose">
+      <h2>The Problem</h2>
+      <p>Engineering students learn about mechanisms from slides, but it's much easier to get when you can turn a knob and watch the gears move. Our brief was a vehicle trainer that teaches at least two different labs, can be reconfigured in under 10 minutes, and costs less than $350.</p>
+      <p>Our design has two halves: a hand-cranked gearbox with swappable ratio cassettes at the back, and a recirculating-ball steering box at the front. The chassis is what connects them. So it had to:</p>
+      <ul class="did">
+        <li><b>Hold both subsystems</b> in fixed, known places, while their designs were still changing</li>
+        <li><b>Put the four wheels</b> where the steering and the gearbox need them</li>
+        <li><b>Stay cheap and easy to adjust,</b> since students will be taking things on and off</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="chapter">
+    <div class="prose">
+      <h2>Design Decisions</h2>
+      <p>The hardest part wasn't the frame itself. It was designing around parts that didn't exist yet. Every choice below came back to that.</p>
+    </div>
+    <div class="decisions two">
+      <article><h3>Aluminium T-slot extrusion</h3><p>Bolts slide anywhere along the slots, so when a teammate changes a dimension, we move a mount instead of remaking the frame. No machining or welding, and it's about $5 per metre.</p></article>
+      <article><h3>One number fits both: 150 mm</h3><p>I set the gap between the rails to the gearbox width. Then it turned out Marvin's steering box is also 150 mm, so both subsystems drop right in between the rails.</p></article>
+      <article><h3>Wheels hang below the rails</h3><p>The axles pass under the frame instead of through it, so there are no holes to drill in the extrusion. It still leaves 60 mm of ground clearance.</p></article>
+      <article><h3>A clear plate for the steering box</h3><p>The box needs a flat seat, so a 6 mm acrylic plate spans both rails. It's clear on purpose: it's a teaching car, and students should be able to see the mechanism working.</p></article>
+    </div>
+    <div class="versus" role="group" aria-label="Front and rear track width">
+      <div><b>220 mm</b><span>rear track: these wheels never turn</span></div>
+      <div class="vs">vs</div>
+      <div class="win"><b>280 mm</b><span>front track: room for the wheels to steer</span></div>
+    </div>
+    <div class="prose">
+      <p>The front wheels sit wider than the back ones, and people always ask why. When a wheel steers, its front edge swings in toward the frame. If the front wheels were as tight to the frame as the rear ones, they'd hit the rail almost as soon as you turned. Drag the slider to try it:</p>
+    </div>
+    <figure class="lockdemo" id="sc-fig">
+      <svg viewBox="0 0 640 420" role="img" aria-labelledby="sc-t sc-d">
+        <title id="sc-t">Front wheel steering clearance</title>
+        <desc id="sc-d">Top view of the front-left corner of the chassis. The wheel pivots at the end of the front beam, 25 mm outside the side rail. As the steering angle grows, the front of the wheel swings toward the rail until it touches at about 40 degrees.</desc>
+        <text class="sl-t" x="12" y="24">Top view, front-left corner</text>
+        <text class="sl-t" x="628" y="24" text-anchor="end">front of car →</text>
+        <rect class="sl-steel" x="280" y="200" width="80" height="210"/>
+        <rect class="sl-steel" x="0" y="300" width="640" height="80"/>
+        <rect class="sl-steel" x="560" y="380" width="80" height="30"/>
+        <text class="sl-t" x="16" y="345">Side rail (20 × 20 extrusion)</text>
+        <text class="sl-t" x="370" y="250">Front beam</text>
+        <line class="sc-gap" id="sc-gapline" x1="0" y1="0" x2="0" y2="0"/>
+        <text class="sc-gap-t" id="sc-gapt" x="0" y="0"></text>
+        <g id="sc-wheel">
+          <rect class="sl-new" x="120" y="80" width="400" height="80" rx="10"/>
+          <line class="sl-line" x1="320" y1="80" x2="320" y2="160"/>
+        </g>
+        <circle class="sl-steel" cx="320" cy="200" r="7"/>
+        <text class="sl-t" x="12" y="66">Wheel (Ø100, seen from above)</text>
+        <text class="sl-t" x="200" y="196" text-anchor="end">Pivot (assumed) →</text>
+      </svg>
+      <div class="controls">
+        <label class="mono" for="sc-angle">Steer</label>
+        <input id="sc-angle" type="range" min="0" max="45" step="1" value="0">
+        <span class="readout" id="sc-read">0° · gap 35 mm</span>
+        <span class="status" id="sc-status" aria-live="polite">Driving straight: lots of room.</span>
+      </div>
+      <figcaption>A simplified drawing from my clearance calculation: gap = 25 − (50 sin θ − 10 cos θ) mm. Pink is the wheel.</figcaption>
+    </figure>
+  </section>
+
+  <section class="chapter">
+    <div class="prose">
+      <h2>Building It in SolidWorks</h2>
+      <p>I'd only used SolidWorks for one assignment before this, so I wanted a model that was easy to change. Every size lives in one shared parameter file, and each part reads from it. If the team decides the car should be longer, I change one number and every rail rebuilds.</p>
+      <p>I also had to follow strict file naming (like <span class="mono">G62-CH-001_Side-Rail</span>), so anyone on the team can tell what a file is and which subsystem it belongs to.</p>
+    </div>
+    <div class="pair shots">
+      <figure><img src="../assets/img/mie243/vehicle/part-side-rail.jpg" alt="SolidWorks part: a long, thin square aluminium bar." width="1100" height="550" loading="lazy"><figcaption>Side rail, used twice. Its length comes straight from the parameter file.</figcaption></figure>
+      <figure><img src="../assets/img/mie243/vehicle/part-mount-plate.jpg" alt="SolidWorks part: a thin square plate with a round hole near the middle." width="660" height="810" loading="lazy"><figcaption>The clear acrylic plate the steering box sits on.</figcaption></figure>
+    </div>
+    <div class="prose">
+      <p>Then came the assembly, and my first try went wrong. I assumed the wrong face of the rail was its inner side, so my cross pieces ended up poking out past the ends of the frame. Instead of patching mates on top of mates, I deleted all of them and started again, checking every single step with the Measure tool.</p>
+    </div>
+    <div class="pair shots">
+      <figure><img src="../assets/img/mie243/vehicle/frame-only.jpg" alt="The bare ladder frame: two long rails joined by three short cross pieces." width="800" height="540" loading="lazy"><figcaption>The bare frame: two rails and three cross pieces.</figcaption></figure>
+      <figure><img src="../assets/img/mie243/vehicle/check-rail-gap.jpg" alt="SolidWorks Measure tool showing a distance of 150 mm between the inner faces of the two rails." width="740" height="440" loading="lazy"><figcaption>Measured, not eyeballed: exactly 150 mm between the rails.</figcaption></figure>
+    </div>
+    <figure class="fig-wide">
+      <img src="../assets/img/mie243/vehicle/layout-sketch-revA.jpg" alt="Dimensioned top-view layout sketch of the chassis showing the gearbox bay, steering box, plate, beam, 300 mm wheelbase, and the 220 mm rear and 280 mm front track widths." width="1400" height="934" loading="lazy" style="border:1px solid var(--line);border-radius:12px;background:#fff">
+      <figcaption>My Rev A layout sketch, drawn before the CAD. Starred numbers were still waiting on my teammates' designs.</figcaption>
+    </figure>
+  </section>
+
+  <section class="chapter">
+    <div class="prose">
+      <h2>The Best Thing I Found</h2>
+      <p>With the frame and wheels done, I put Marvin's real steering box onto my chassis to check that our parts actually fit together. The good news: the box fits between the rails exactly, just like we planned.</p>
+      <p>The bad news: his steering column is long enough that the steering wheel lands right over the back wheel, and the bottom of the rim runs into the side rail.</p>
+    </div>
+    <div class="pair shots">
+      <figure><img src="../assets/img/mie243/vehicle/clash-top.jpg" alt="Top view of the chassis. A red circle marks where the steering wheel rim overlaps the rear wheel." width="645" height="450" loading="lazy"><figcaption><b class="before">Top</b> The rim reaches out over the rear wheel.</figcaption></figure>
+      <figure><img src="../assets/img/mie243/vehicle/clash-side.jpg" alt="Side view of the chassis. A red circle marks where the steering wheel drops down to the height of the rail and the rear wheel." width="645" height="365" loading="lazy"><figcaption><b class="before">Side</b> The bottom of the rim drops down to rail height.</figcaption></figure>
+    </div>
+    <div class="prose">
+      <p>Each of us had checked our own part on its own, and each part was fine. The problem only showed up once they were together. Finding that on screen is much cheaper than finding it after 3D printing everything!</p>
+      <p>A longer car would move the back wheel out of the way, but the rail runs the whole length of the car, so the rim would still hit it. We'll most likely need both: a slightly longer wheelbase and a steering column that angles up. That's our first job for the next revision.</p>
+    </div>
+  </section>
+
+  <section class="chapter">
+    <div class="prose">
+      <h2>Keeping Four People on Track</h2>
+      <p>I was our scrum master, which mostly meant making sure four people designing four different things would end up with parts that fit. We work in two-week sprints, each aimed at a course check-in, with 10 epics (one per deliverable) and an owner on every task.</p>
+    </div>
+    <figure class="pmfig">
+      <svg viewBox="0 0 760 316" role="img" aria-labelledby="tl-t tl-d">
+        <title id="tl-t">Sprint timeline</title>
+        <desc id="tl-d">Seven sprints from September 21 to December 8. Sprints 1 to 5 are done, sprint 6 is in progress starting at the final design check-in on November 16, and sprint 7 runs to the final submission.</desc>
+        <line class="tl-mark" x1="611.2" y1="20" x2="611.2" y2="278"/><text class="tl-mark-t" x="611.2" y="14" text-anchor="middle">Final design check-in</text>
+        <line class="tl-mark" x1="725.6" y1="20" x2="725.6" y2="278"/><text class="tl-mark-t" x="740" y="14" text-anchor="end">Submit</text>
+        <text class="tl-m" x="0" y="55">S1</text><text class="tl-t" x="34" y="55">Read the brief, set specs, first ideas</text><rect class="tl-bar" x="320" y="40" width="36.4" height="20" rx="4"/>
+        <text class="tl-m" x="0" y="89">S2</text><text class="tl-t" x="34" y="89">TA feedback: rethink the ideas</text><rect class="tl-bar" x="356.4" y="74" width="36.4" height="20" rx="4"/>
+        <text class="tl-m" x="0" y="123">S3</text><text class="tl-t" x="34" y="123">Narrow down to 3 concepts</text><rect class="tl-bar" x="392.8" y="108" width="67.6" height="20" rx="4"/>
+        <text class="tl-m" x="0" y="157">S4</text><text class="tl-t" x="34" y="157">Pick the final concept</text><rect class="tl-bar" x="465.6" y="142" width="67.6" height="20" rx="4"/>
+        <text class="tl-m" x="0" y="191">S5</text><text class="tl-t" x="34" y="191">Gearbox, steering and chassis design</text><rect class="tl-bar" x="538.4" y="176" width="67.6" height="20" rx="4"/>
+        <text class="tl-m" x="0" y="225">S6</text><text class="tl-t" x="34" y="225">Check-in, freeze interfaces, assembly</text><rect class="tl-bar now" x="611.2" y="210" width="67.6" height="20" rx="4"/>
+        <text class="tl-m" x="0" y="259">S7</text><text class="tl-t" x="34" y="259">Full assembly, drawings, report</text><rect class="tl-bar next" x="684" y="244" width="41.6" height="20" rx="4"/>
+        <line class="tl-axis" x1="320" y1="278" x2="740" y2="278"/>
+        <text class="tl-m" x="372" y="300" text-anchor="middle">Oct 1</text>
+        <text class="tl-m" x="533.2" y="300" text-anchor="middle">Nov 1</text>
+        <text class="tl-m" x="689.2" y="300" text-anchor="middle">Dec 1</text>
+      </svg>
+      <figcaption>Our sprints from Jira. Gold is the sprint we're in now.</figcaption>
+    </figure>
+    <div class="prose">
+      <p>Honestly, our board went stale in October. Everyone was heads-down on their own part, and our designs slowly drifted apart. So before the final check-in, I audited the board against what we'd actually done, logged it truthfully, and changed how we work:</p>
+      <ul class="did">
+        <li><b>Weekly board updates,</b> so problems show up before a check-in, not at it</li>
+        <li><b>An interface freeze:</b> one date where we agree on every shared dimension</li>
+        <li><b>A teammate reviews work</b> before it can be marked done</li>
+        <li><b>Rebalanced workloads.</b> The open tasks were uneven, so I pulled the to-do items from everyone's slides into Jira and spread them out</li>
+      </ul>
+      <p>The steering clash is my favourite example of this working. I found it in CAD, it became a Jira task, and it now blocks our assembly, so it can't quietly get lost:</p>
+    </div>
+    <figure class="pmfig">
+      <svg viewBox="0 0 762 330" role="img" aria-labelledby="cp-t cp-d">
+        <title id="cp-t">Critical path for sprint 6</title>
+        <desc id="cp-d">Agreeing on shared dimensions comes first. Then the gearbox, steering and chassis parts are finished, then the partial assembly, then sprint 7's full assembly. The steering clash fix blocks the partial assembly.</desc>
+        <defs>
+          <marker id="cp-arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path class="cp-ah" d="M0,0L10,5L0,10z"/></marker>
+          <marker id="cp-arr-hot" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path class="cp-ah hot" d="M0,0L10,5L0,10z"/></marker>
+        </defs>
+        <path class="cp-a" d="M152,165 L198,63" marker-end="url(#cp-arr)"/>
+        <path class="cp-a" d="M152,167 L198,167" marker-end="url(#cp-arr)"/>
+        <path class="cp-a" d="M152,169 L198,271" marker-end="url(#cp-arr)"/>
+        <path class="cp-a" d="M352,63 L408,163" marker-end="url(#cp-arr)"/>
+        <path class="cp-a" d="M352,167 L408,167" marker-end="url(#cp-arr)"/>
+        <path class="cp-a" d="M352,271 L408,171" marker-end="url(#cp-arr)"/>
+        <path class="cp-a hot" d="M485,250 L485,203" marker-end="url(#cp-arr-hot)"/>
+        <text class="cp-k" x="493" y="232" style="fill:var(--rose)">blocks</text>
+        <path class="cp-a" d="M562,167 L608,167" marker-end="url(#cp-arr)"/>
+        <rect class="cp-box" x="2" y="134" width="150" height="66" rx="10"/>
+        <text class="cp-k" x="14" y="154">FIRST</text><text class="cp-t" x="14" y="174">Interface freeze</text><text class="cp-w" x="14" y="191">Everyone (I run it)</text>
+        <rect class="cp-box" x="202" y="30" width="150" height="66" rx="10"/>
+        <text class="cp-k" x="214" y="50">REAR</text><text class="cp-t" x="214" y="70">Gearbox parts</text><text class="cp-w" x="214" y="87">Chenyu</text>
+        <rect class="cp-box" x="202" y="134" width="150" height="66" rx="10"/>
+        <text class="cp-k" x="214" y="154">FRONT</text><text class="cp-t" x="214" y="174">Steering box</text><text class="cp-w" x="214" y="191">Marvin, Ethan</text>
+        <rect class="cp-box" x="202" y="238" width="150" height="66" rx="10"/>
+        <text class="cp-k" x="214" y="258">FRAME</text><text class="cp-t" x="214" y="278">Chassis parts</text><text class="cp-w" x="214" y="295">Me</text>
+        <rect class="cp-box" x="412" y="134" width="150" height="66" rx="10"/>
+        <text class="cp-k" x="424" y="154">THEN</text><text class="cp-t" x="424" y="174">Partial assembly</text><text class="cp-w" x="424" y="191">Me</text>
+        <rect class="cp-box cp-hot" x="412" y="252" width="150" height="66" rx="10"/>
+        <text class="cp-k" x="424" y="272" style="fill:var(--rose)">FOUND IN CAD</text><text class="cp-t" x="424" y="292">Fix steering clash</text><text class="cp-w" x="424" y="309">Me + Marvin</text>
+        <rect class="cp-box" x="612" y="134" width="148" height="66" rx="10"/>
+        <text class="cp-k" x="624" y="154">SPRINT 7</text><text class="cp-t" x="624" y="174">Full assembly</text><text class="cp-w" x="624" y="191">Whole team</text>
+      </svg>
+      <figcaption>What has to finish before what this sprint. The pink box is the clash I found.</figcaption>
+    </figure>
+  </section>
+
+  <section class="chapter">
+    <div class="prose">
+      <h2>What's Next</h2>
+      <ul class="did">
+        <li><b>Fix the steering clash</b> with Marvin: a longer wheelbase, an angled column, or both</li>
+        <li><b>Link my assembly to the parameter file.</b> Right now the parts update from it, but the positions in the assembly are typed-in numbers</li>
+        <li><b>Swap the placeholder wheels for real ones,</b> and add the gearbox once Chenyu's parts are done</li>
+        <li><b>Get real quotes</b> for the chassis parts. It's about $74 so far, and most of that is the corner brackets, not the aluminium</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="chapter">
+    <div class="prose">
+      <h2>What I Learned</h2>
+      <p>I built most of this assembly overnight before our final check-in, re-mating parts at 4 AM. It was stressful, but here's what I'll keep:</p>
+      <ul class="did">
+        <li><b>Put the parts together early.</b> Every part was fine on its own. The clash only showed up in the assembly.</li>
+        <li><b>Pick dimensions other people can build around.</b> One shared number, 150 mm, made two subsystems fit.</li>
+        <li><b>When it's a mess, restart cleanly.</b> Deleting every mate and re-doing them carefully was faster than patching.</li>
+        <li><b>A project board only helps if it's honest.</b> Ours was useful again once it showed what was really done.</li>
+      </ul>
+    </div>
+  </section>
+
+  <nav class="pager" aria-label="More course projects">
+    <a href="index.html"><span class="mono">← Back to</span><span>Course Projects</span></a>
+    <a class="next" href="mie243-shaft-lock.html"><span class="mono">Next →</span><span>MIE243: Shaft Lock</span></a>
+  </nav>
+</main>
+
+<footer class="site-foot"><div class="wrap mono"><span>© 2026 Diane Qin</span><a href="mailto:dianecqin@gmail.com">dianecqin@gmail.com</a></div></footer>
+<script src="../assets/js/steer-clear.js"></script>
+</body>
+</html>
