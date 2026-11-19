@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>MIE243 · Shaft Lock Button · Diane Qin</title>
+<meta name="description" content="Designing and modelling a spring-loaded shaft lock for a cordless screwdriver's planetary gearbox in SolidWorks, from first sketch to a working assembly.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Young+Serif&family=Instrument+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="../assets/css/site.css">
+</head>
+<body>
+<nav class="site-nav wrap" aria-label="Main">
+  <a href="../index.html">Home</a>
+  <a href="../design-teams/index.html">Design Teams</a>
+  <a href="index.html" aria-current="page">Course Projects</a>
+  <a href="../about.html">About</a>
+  <a href="../contact.html">Contact</a>
+</nav>
+
+<main class="wrap">
+  <nav class="crumbs mono" aria-label="Breadcrumb"><ol><li><a href="index.html">Course Projects</a></li><li aria-current="page">MIE243 Dissection 4</li></ol></nav>
+
+  <header class="page-head">
+    <p class="eyebrow mono">Mechanical Engineering Design I · Dissection 4 · Nov 2026</p>
+    <h1>A shaft lock button for a cordless screwdriver</h1>
+    <p class="lede">We took apart a cordless screwdriver and modelled its planetary gearbox in SolidWorks. Then came the design part: adding a button that locks the output shaft. I designed and modelled it, starting as a total beginner at CAD.</p>
+  </header>
+
+  <dl class="facts">
+    <div><dt>My role</dt><dd>Designed and modelled CAD Model 2 (the shaft lock). Wrote how it's assembled and how it works.</dd></div>
+    <div><dt>Team</dt><dd>Four second-year engineering students</dd></div>
+    <div><dt>Tools</dt><dd>SolidWorks: parts, assemblies, mates, helix and sweep</dd></div>
+    <div><dt>Outcome</dt><dd>A working pin lock: a notched disc, a spring-loaded button, and a modified housing</dd></div>
+  </dl>
+
+  <figure class="fig-hero">
+    <img src="../assets/img/mie243/d4/final-button-spring.jpg" alt="SolidWorks render of the finished lock button: a round cap on a thin pin, with a coil spring around the pin, sitting on a short boss on the side of the cylindrical gearbox housing." width="526" height="673">
+    <figcaption>The finished button: a spring-loaded pin that slides through a boss on the housing.</figcaption>
+  </figure>
+
+  <section class="chapter">
+    <div class="prose">
+      <h2>The Problem</h2>
+      <p>The screwdriver holds bits in a hex socket. Our task was to imagine a collet on the end instead, like a Dremel, so it could grip bits of different sizes. But you tighten a collet by twisting it by hand, and when you twist it, the output shaft just spins along with your hand. It's like trying to open a jar when the lid and the jar both turn.</p>
+      <p>So I needed to design a button that:</p>
+      <ul class="did">
+        <li><b>Locks the output shaft</b> while you hold it down, so twisting tightens the collet</li>
+        <li><b>Releases on its own</b> when you let go, so the motor can drive the shaft again</li>
+        <li><b>Fits inside the existing housing</b>, around a gearbox my teammate had already modelled</li>
+      </ul>
+      <p>It only has to work when the motor is off. It never has to stop a spinning shaft.</p>
+    </div>
+  </section>
+
+  <section class="chapter">
+    <div class="prose">
+      <h2>How It Works</h2>
+      <p>Press the button and a pin slides down into one of 12 notches on a disc fixed to the shaft, so the shaft can't turn. Let go and the spring lifts the pin back out. Try it:</p>
+    </div>
+    <figure class="lockdemo">
+      <svg viewBox="0 0 680 560" role="img" aria-labelledby="sl-t sl-d">
+        <title id="sl-t">Shaft lock mechanism</title>
+        <desc id="sl-d">Side cross-section and end view. A spring-loaded button pushes a pin through the housing wall into a notched disc fixed to the output shaft.</desc>
+        <text class="sl-t" x="40" y="24">Side cross-section</text>
+        <text class="sl-t" x="40" y="74">Housing (held by the user)</text>
+        <rect class="sl-steel" x="40" y="90" width="300" height="14"/>
+        <rect class="sl-steel" x="356" y="90" width="114" height="14"/>
+        <rect class="sl-steel" x="40" y="236" width="430" height="14"/>
+        <rect class="sl-steel" x="40" y="104" width="14" height="132"/>
+        <rect class="sl-steel" x="456" y="104" width="14" height="54"/>
+        <rect class="sl-steel" x="456" y="182" width="14" height="54"/>
+        <rect class="sl-steel" x="72" y="120" width="178" height="100" rx="6"/>
+        <text class="sl-t" x="161" y="166" text-anchor="middle">Planetary gearbox</text>
+        <text class="sl-t" x="161" y="186" text-anchor="middle">(unchanged)</text>
+        <rect class="sl-steel" x="250" y="162" width="290" height="16"/>
+        <rect class="sl-steel" x="540" y="148" width="56" height="44" rx="4"/>
+        <text class="sl-t" x="568" y="136" text-anchor="middle">Collet</text>
+        <rect class="sl-new" x="336" y="125" width="24" height="90" rx="2"/>
+        <polyline id="sl-sSpring" class="sl-spring" points=""/>
+        <g id="sl-sBtn">
+          <rect class="sl-new" x="342" y="64" width="12" height="55"/>
+          <rect class="sl-new" x="328" y="50" width="40" height="14" rx="3"/>
+        </g>
+        <text class="sl-t" x="384" y="61">Button</text>
+        <text class="sl-t" x="384" y="84">Return spring</text>
+        <text class="sl-t" x="372" y="122">Pin</text>
+        <line class="sl-lead" x1="348" y1="217" x2="348" y2="262"/>
+        <text class="sl-t" x="348" y="278" text-anchor="middle">Notched disc</text>
+        <line class="sl-lead" x1="505" y1="180" x2="505" y2="262"/>
+        <text class="sl-t" x="505" y="278" text-anchor="middle">Output shaft</text>
+        <text class="sl-t" x="40" y="314">End view, looking along the shaft</text>
+        <circle class="sl-line" cx="200" cy="440" r="100"/>
+        <circle class="sl-line" cx="200" cy="440" r="88"/>
+        <g id="sl-eDisc"><path id="sl-discPath" class="sl-new" d=""/></g>
+        <circle class="sl-steel" cx="200" cy="440" r="16"/>
+        <polyline id="sl-eSpring" class="sl-spring" points=""/>
+        <g id="sl-eBtn">
+          <rect class="sl-new" x="194" y="318" width="12" height="56"/>
+          <rect class="sl-new" x="180" y="304" width="40" height="14" rx="3"/>
+        </g>
+        <line class="sl-lead" x1="206" y1="360" x2="352" y2="360"/>
+        <text class="sl-t" x="358" y="364">Pin slides through the boss</text>
+        <line class="sl-lead" x1="296" y1="412" x2="352" y2="412"/>
+        <text class="sl-t" x="358" y="416">Housing wall</text>
+        <line class="sl-lead" x1="254" y1="468" x2="352" y2="468"/>
+        <text class="sl-t" x="358" y="472">Disc with 12 notches</text>
+      </svg>
+      <div class="controls">
+        <button id="sl-hold" type="button">Press and hold</button>
+        <span class="status" id="sl-status" aria-live="polite">Released: the spring holds the pin out, so the shaft spins freely.</span>
+      </div>
+      <figcaption>A simplified drawing of my design. Pink parts are the ones I added.</figcaption>
+    </figure>
+  </section>
+
+  <section class="chapter">
+    <div class="prose">
+      <h2>Design Decisions</h2>
+      <p>We had just learned about brakes in lecture, so my first thought was a small friction brake. Then I did the math. Your finger can push the button with about 15 N, and a friction brake on this 10 mm shaft turns that into almost nothing:</p>
+    </div>
+    <div class="versus" role="group" aria-label="Holding torque">
+      <div><b>0.02 N·m</b><span>what a finger-powered friction brake could hold</span></div>
+      <div class="vs">vs</div>
+      <div class="win"><b>~1 N·m</b><span>what it takes to hand-tighten a collet</span></div>
+    </div>
+    <div class="prose">
+      <p>To hold 1 N·m by friction, you'd have to press with about 670 N. That's roughly the weight of an adult, through one fingertip! So friction was out, and every other decision followed from there:</p>
+    </div>
+    <div class="decisions two">
+      <article><h3>A pin, not a brake</h3><p>A pin locks by shape, not by friction, so it can't slip. Your finger only has to push it past the spring. Once it's in a notch, the housing holds it, no matter how hard you press.</p></article>
+      <article><h3>Lock the output, not the motor side</h3><p>The gearbox is 33.6 : 1, so locking the sun gear would only take 0.03 N·m. But then every tiny gear tooth takes the load each time you change a bit. Locking the output means the load skips the gearbox completely.</p></article>
+      <article><h3>A bigger disc (Ø36 mm)</h3><p>The force on the pin is F = T / r. A Ø36 disc puts 56 N on the pin instead of 125 N for a small one, and it lets the pin be short and stubby instead of long and bendy.</p></article>
+      <article><h3>12 notches</h3><p>More notches means less turning before the pin catches (30° at most), but thinner teeth between them. At Ø36 the teeth are still about 6 mm wide, so strength wasn't the limit and convenience won.</p></article>
+    </div>
+  </section>
+
+  <section class="chapter">
+    <div class="prose">
+      <h2>Design Iteration</h2>
+      <p>Not everything came out right the first time. Here are a few things I had to fix along the way, and what each one taught me.</p>
+    </div>
+
+    <div class="iter">
+      <h3 class="mono">The notched disc</h3>
+      <div class="pair shots">
+        <figure><img src="../assets/img/mie243/d4/disc-v1-polygon.jpg" alt="The lock disc came out as a 12-sided polygon instead of a circle with slots." width="742" height="754" loading="lazy"><figcaption><b class="before">Before</b> A 12-sided polygon! My notch's 3.4 mm dimension had snapped to the rectangle's height, not its width.</figcaption></figure>
+        <figure><img src="../assets/img/mie243/d4/disc-v2-notched.jpg" alt="The corrected lock disc with 12 narrow, evenly spaced slots around its rim." width="540" height="582" loading="lazy"><figcaption><b class="after">After</b> 12 clean slots. The pattern copies the first notch, so fixing one dimension fixed all 12.</figcaption></figure>
+      </div>
+    </div>
+
+    <div class="iter">
+      <h3 class="mono">The button pin</h3>
+      <div class="pair shots">
+        <figure><img src="../assets/img/mie243/d4/pin-v1-radius.jpg" alt="Half-profile sketch of the button pin with dimensions 7, 3, 5 and 3 measured from the centreline." width="735" height="694" loading="lazy"><figcaption><b class="before">Before</b> I dimensioned radii instead of diameters, so everything came out twice as big. A Ø6 pin would never fit a 3.4 mm notch.</figcaption></figure>
+        <figure><img src="../assets/img/mie243/d4/pin-v2-diameter.jpg" alt="The corrected half-profile sketch with values 3.5, 1.5, 2.5 and 1.5, giving a much thinner pin." width="568" height="696" loading="lazy"><figcaption><b class="after">After</b> Halved values: a Ø3 pin, a Ø5 shoulder to stop it falling out, and a Ø7 head.</figcaption></figure>
+      </div>
+    </div>
+
+    <div class="iter">
+      <h3 class="mono">The return spring</h3>
+      <div class="pair shots">
+        <figure><img src="../assets/img/mie243/d4/spring-v1-tube.jpg" alt="A plain hollow tube used as a placeholder for the spring." width="740" height="530" loading="lazy"><figcaption><b class="before">Before</b> A plain tube as a placeholder. It showed where the spring goes, but not how it works.</figcaption></figure>
+        <figure><img src="../assets/img/mie243/d4/spring-v2-coil.jpg" alt="A four-turn coil spring made from a helix and a swept circle." width="843" height="974" loading="lazy"><figcaption><b class="after">After</b> A real coil, made with a helix and a sweep. I sized the wire (Ø0.4 mm) so the spring can squash the full 3 mm before its coils touch.</figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="chapter">
+    <div class="prose">
+      <h2>Checking That It Fits</h2>
+      <p>Before calling it done, I checked that everything actually fits together. To make room for the disc, I also had to move the housing, which meant finding an old mate that was fighting my new one and deleting it.</p>
+    </div>
+    <div class="trio">
+      <figure><img src="../assets/img/mie243/d4/check-housing.jpg" alt="See-through housing with the planetary gears and the notched disc inside." width="665" height="873" loading="lazy"><figcaption>The gears and the disc both sit inside the housing.</figcaption></figure>
+      <figure><img src="../assets/img/mie243/d4/check-end-view.jpg" alt="End view with the pin tip hovering just above the rim of the notched disc." width="1011" height="1020" loading="lazy"><figcaption>The pin hovers 1 mm above the disc, so the shaft spins freely.</figcaption></figure>
+      <figure><img src="../assets/img/mie243/d4/exploded.jpg" alt="Exploded view showing the housing boss, the coil spring and the button pin pulled apart." width="857" height="740" loading="lazy"><figcaption>Exploded view of the boss, spring and button.</figcaption></figure>
+    </div>
+    <div class="prose">
+      <p>Writing the assembly steps for a machinist made me notice one more problem. The pin's shoulder and its head are both bigger than the hole, so as one solid part, the button could never be installed! In the real product, the head would be a separate cap, pressed onto the pin after it goes in from inside the housing.</p>
+    </div>
+  </section>
+
+  <section class="chapter">
+    <div class="prose">
+      <h2>What I'd Change</h2>
+      <ul class="did">
+        <li><b>Make the button shorter.</b> It sticks out about 11 mm, so it could snag or get pressed by accident. I'd move the boss to the inside of the housing wall and sink the spring into a pocket, which would bring it down to about 3 mm.</li>
+        <li><b>Model the cap as its own part,</b> so the CAD matches what would actually be built.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="chapter">
+    <div class="prose">
+      <h2>What I Learned</h2>
+      <p>I started this at 2 AM, overwhelmed and not sure where to begin in SolidWorks. A day later I had a working mechanism, with a real spring! A few things I'll keep with me:</p>
+      <ul class="did">
+        <li><b>Design intent matters.</b> I positioned the disc from the carrier face, so if the shaft ever changes, the disc moves with it.</li>
+        <li><b>Check what a dimension is attached to.</b> Both my polygon disc and my giant pin came from one dimension on the wrong line.</li>
+        <li><b>Back the numbers up.</b> One quick calculation (F = T / r) settled the disc size better than any guess could.</li>
+        <li><b>Think about how it gets built,</b> not just how it looks in CAD.</li>
+      </ul>
+    </div>
+  </section>
+
+  <nav class="pager" aria-label="More course projects">
+    <a href="index.html"><span class="mono">← Back to</span><span>Course Projects</span></a>
+    <a class="next" href="esp-2-rock-cleaning.html"><span class="mono">Next →</span><span>ESP II: Beach Rocks</span></a>
+  </nav>
+</main>
+
+<footer class="site-foot"><div class="wrap mono"><span>© 2026 Diane Qin</span><a href="mailto:dianecqin@gmail.com">dianecqin@gmail.com</a></div></footer>
+<script src="../assets/js/shaft-lock.js"></script>
+</body>
+</html>

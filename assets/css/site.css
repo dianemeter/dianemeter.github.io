@@ -263,3 +263,30 @@ img.fb{width:100%;height:auto;border-radius:8px;background:#fff;padding:6px 4px;
 .exit p{margin:0;color:var(--muted)}
 .contact-row{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin-top:10px}
 @media (max-width:760px){.welcome{grid-template-columns:1fr;gap:26px}.welcome figure{position:static;max-width:440px}}
+
+/* ---- MIE243 shaft lock page ---- */
+/* interactive mechanism demo */
+.lockdemo{max-width:760px;margin:20px 0 10px;padding:16px;border:1px solid var(--line);border-radius:16px;background:var(--card)}
+.lockdemo svg{width:100%;height:auto;display:block}
+.sl-steel{fill:color-mix(in srgb,var(--muted) 22%,var(--card));stroke:var(--muted);stroke-width:.8}
+.sl-new{fill:color-mix(in srgb,var(--rose) 24%,var(--card));stroke:var(--rose);stroke-width:1}
+.sl-spring{fill:none;stroke:var(--rose);stroke-width:1.5}
+.sl-line{fill:none;stroke:var(--muted);stroke-width:1}
+.sl-lead{stroke:var(--muted);stroke-width:.6;stroke-dasharray:3 3}
+.sl-t{fill:var(--muted);font:13px var(--body)}
+.lockdemo .controls{display:flex;flex-wrap:wrap;align-items:center;gap:12px 16px;margin-top:10px}
+.lockdemo button{font:500 15px var(--body);padding:10px 20px;border-radius:999px;border:1.5px solid var(--ink);background:var(--ink);color:var(--page);cursor:pointer;touch-action:none;-webkit-user-select:none;user-select:none}
+.lockdemo .status{flex:1;min-width:200px;color:var(--muted);font-size:14.5px}
+.decisions.two{grid-template-columns:repeat(2,minmax(0,1fr))}
+@media (max-width:820px){.decisions.two{grid-template-columns:1fr}}
+
+/* before / after CAD screenshots */
+.iter{margin:26px 0 0;max-width:var(--wide)}
+.iter>h3{margin:0 0 10px;color:var(--gold);font-weight:500;text-transform:uppercase;letter-spacing:.1em}
+.pair.shots img,.trio img{aspect-ratio:1/1;object-fit:contain;background:#eef0f4;border:1px solid var(--line)}
+.shots figcaption b{display:inline-block;font:500 11.5px var(--mono);letter-spacing:.1em;text-transform:uppercase;padding:1px 8px;border-radius:999px;margin-right:6px}
+.shots .before{background:color-mix(in srgb,var(--muted) 18%,transparent);color:var(--muted)}
+.shots .after{background:color-mix(in srgb,var(--gold-soft) 35%,transparent);color:var(--gold)}
+.trio{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin:18px 0 14px;max-width:var(--wide)}
+.trio figure{margin:0}
+@media (max-width:700px){.trio{grid-template-columns:1fr}}
